@@ -1,48 +1,253 @@
-:root {
-  --primary-gradient: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
-  --section-gradient: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
-  --card-bg: #fff;
-  --shadow: 0 2px 24px 0 rgba(80, 80, 180, 0.08);
-  --radius: 1.5rem;
-  --divider-bg: repeating-linear-gradient(
-    135deg,
-    #b490ca 0 3px,
-    transparent 3px 10px,
-    #5ee7df 10px 13px,
-    transparent 13px 20px
-  );
+/* style.css */
+
+/* 1. Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ... All your existing styles ... */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+}
 
-/* Add button-group styles here */
-.button-group {
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0073e6;
+}
+
+/* 2. Global Containers */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 3. Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sticky-header .container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.sticky-header .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sticky-header nav a {
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 4. Hero Section */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #6c63ff88, #ff6584aa),
+              url('hero-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-section .hero-content img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-section .tagline {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.hero-links a {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-links a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 5. Section Divider */
+.section-divider {
+  height: 2px;
+  background: #e0e0e0;
+  margin: 40px 0;
+}
+
+/* 6. Card Sections Styling */
+.card-section {
+  padding: 40px 0;
+}
+
+.card-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+/* 7. About Details Layout */
+.about-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
-.button-group .btn {
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  background: #a259e4;
-  color: #fff;
-  margin: 0;
+.about-details > div {
+  flex: 1 1 250px;
+}
+
+.about-details strong {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* 8. Skills Badges */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-badge {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 9. Projects Cards */
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.placeholder {
+  text-align: center;
+  color: #666;
+}
+
+/* 10. Contact Form & Social Links */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  margin: 0 auto 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
   font-size: 1rem;
 }
 
-@media (max-width: 600px) {
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-  .button-group .btn {
-    width: 80%;
-    margin-bottom: 10px;
-  }
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background: #6c63ff;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-/* ... Your other media queries ... */
+.contact-form button:hover {
+  background: #574fd6;
+}
+
+.social-links {
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.social-links a:hover {
+  color: #6c63ff;
+}
+
+/* 11. Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 12. Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .hero-section .tagline {
+    font-size: 1.1rem;
+  }
+  .about-details {
+    flex-direction: column;
+  }
+}
