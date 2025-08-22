@@ -1,4 +1,3 @@
-/* === Hero Section === */
 .hero-section {
   background: linear-gradient(to right, #6a11cb, #2575fc);
   color: #fff;
@@ -9,18 +8,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap; /* makes it responsive */
-  max-width: 1000px;
+  gap: 50px;
+  max-width: 1100px;
   margin: 0 auto;
+  flex-wrap: wrap; /* keeps responsive */
 }
 
 .hero-content img {
   width: 220px;
   height: 220px;
-  object-fit: cover;
   border-radius: 50%;
   border: 5px solid #fff;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -54,18 +53,10 @@
   color: #fff;
 }
 
-/* === Responsive === */
+/* Responsive (mobile view stacks vertically) */
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
     text-align: center;
-  }
-
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-text .tagline {
-    font-size: 1rem;
   }
 }
